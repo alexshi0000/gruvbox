@@ -115,6 +115,9 @@ let s:gb.bright_purple  = ['#d3869b', 175]     " 211-134-155
 let s:gb.bright_aqua    = ['#8ec07c', 108]     " 142-192-124
 let s:gb.bright_orange  = ['#fe8019', 208]     " 254-128-25
 
+" EXTRA WHITESPACE!
+hi ExtraWhitespace guifg=#fabd2f guibg=#fabd2f
+
 let s:gb.neutral_red    = ['#cc241d', 124]     " 204-36-29
 let s:gb.neutral_green  = ['#98971a', 106]     " 152-151-26
 let s:gb.neutral_yellow = ['#d79921', 172]     " 215-153-33
@@ -503,7 +506,7 @@ endif
 hi! link NonText GruvboxBg2
 hi! link SpecialKey GruvboxBg2
 
-call s:HL('Visual',    s:none,  s:bg3, s:invert_selection)
+call s:HL('Visual',    s:none,  s:bg3, "")
 hi! link VisualNOS Visual
 
 call s:HL('Search',    s:yellow, s:bg0, s:inverse)
@@ -515,7 +518,7 @@ call s:HL('StatusLine',   s:bg2, s:fg1, s:inverse)
 call s:HL('StatusLineNC', s:bg1, s:fg4, s:inverse)
 
 " The column separating vertically split windows
-call s:HL('VertSplit', s:bg3, s:vert_split)
+call s:HL('VertSplit', s:bg3, s:bg3)
 
 " Current match in wildmenu completion
 call s:HL('WildMenu', s:blue, s:bg2, s:bold)
@@ -594,7 +597,7 @@ hi! link Keyword GruvboxRed
 " Variable name
 hi! link Identifier GruvboxBlue
 " Function name
-hi! link Function GruvboxGreenBold
+hi! link Function GruvboxBlueBold
 
 " Generic preprocessor
 hi! link PreProc GruvboxAqua
@@ -1375,7 +1378,6 @@ hi! link jsonBraces GruvboxFg1
 hi! link jsonString GruvboxFg1
 
 " }}}
-
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{
